@@ -36,7 +36,6 @@ function generateImageWithStamp() {
         button.innerText = "Cover Face";
         document.getElementById("saveImageButton").disabled = true;
 
-        // load face-api.js
         const originalImage = document.getElementById("myImg");
         let maskImage = await loadImage("smillingEmoji.png");
 
@@ -64,8 +63,15 @@ function generateImageWithStamp() {
             maskImage = await loadMaskImage(file);
         }
 
-
+        document.getElementById("status").innerText = "Searching for face...";
         const newImage = await createImageElementWithMaskOnFace(originalImage, maskImage);
+
+        if (newImage === null) {
+            document.getElementById("status").innerText = "No face found.";
+            return;
+        } else {
+            document.getElementById("status").innerText = "Face found.";
+        }
         console.log("Generated image with stamp.");
         newImage.id = "otherImage";
         // Save the new image for later use.

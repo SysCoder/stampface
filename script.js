@@ -1,4 +1,4 @@
-document.getElementById('uploadImageButton').addEventListener('click', function() {
+document.getElementById('loadImageButton').addEventListener('click', function() {
     document.getElementById('fileInput').click();
 });
 
@@ -14,7 +14,7 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     }
 });
 
-document.getElementById('uploadStampButton').addEventListener('click', function() {
+document.getElementById('loadStampButton').addEventListener('click', function() {
     document.getElementById('fileStampInput').click();
 });
 
@@ -34,7 +34,7 @@ function generateImageWithStamp() {
         const button = document.getElementById("faceCoverButton");
         button.disabled = true;
         button.innerText = "Cover Face";
-        document.getElementById("downloadImageButton").disabled = true;
+        document.getElementById("loadImageButton").disabled = true;
 
         // load face-api.js
         const originalImage = document.getElementById("myImg");
@@ -85,7 +85,7 @@ async function coverFace() {
     otherImage.src = temp;
 
     const button = document.getElementById("faceCoverButton");
-    const downloadButton = document.getElementById("downloadImageButton");
+    const downloadButton = document.getElementById("loadImageButton");
     if (button.innerText === "Cover Face") {
         button.innerText = "Uncover Face";
         document.getElementById("faceCoverButton").disabled = false;

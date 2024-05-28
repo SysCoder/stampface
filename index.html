@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Cover</title>
+    <script src="face-api.min.js"></script>
+    <script src="faceCover.js"></script>
+</head>
+<body>
+    <h1>Face Stamp</h1>
+    <div style="display: block;">
+        <img id="myImg" width="500px"/>
+        <div id="hiddenContainer" style="display: none;"></div>
+    </div>
+    <input type="file" id="fileInput" style="display: none;" accept="image/*" />
+    <input type="file" id="fileStampInput" style="display: none;" accept="image/*" />
+    <div style="display: flex; flex-wrap: wrap;">
+        <button id="uploadImageButton" style="width: 100px; height: 50px;">Upload Image</button>
+        <button id="faceCoverButton" style="width: 100px; height: 50px;" onclick="coverFace()" disabled>Cover Face</button>
+        <button id="downloadImageButton" style="width: 100px; height: 50px;" onclick="downloadImage()" disabled>Download Image</button>
+        <button id="uploadStampButton" style="width: 100px; height: 50px;">Upload Stamp (optional)</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

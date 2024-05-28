@@ -34,7 +34,7 @@ function generateImageWithStamp() {
         const button = document.getElementById("faceCoverButton");
         button.disabled = true;
         button.innerText = "Cover Face";
-        document.getElementById("loadImageButton").disabled = true;
+        document.getElementById("saveImageButton").disabled = true;
 
         // load face-api.js
         const originalImage = document.getElementById("myImg");
@@ -85,10 +85,9 @@ async function coverFace() {
     otherImage.src = temp;
 
     const button = document.getElementById("faceCoverButton");
-    const downloadButton = document.getElementById("loadImageButton");
+    const downloadButton = document.getElementById("saveImageButton");
     if (button.innerText === "Cover Face") {
         button.innerText = "Uncover Face";
-        document.getElementById("faceCoverButton").disabled = false;
         downloadButton.disabled = false;
     } else {
         button.innerText = "Cover Face";
